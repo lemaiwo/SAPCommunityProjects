@@ -1,0 +1,63 @@
+{
+  "routes": [
+    {
+      "path": "/webapp/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/webapp/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/browser",
+      "target": {
+        "type": "destination",
+        "name": "ui5lab",
+        "entryPath": "/browser"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/generated.json",
+      "target": {
+        "type": "destination",
+        "name": "abapgit",
+        "entryPath": "/generated.json"
+      },
+      "description": "SAPUI5 Resources"
+    }
+  ],
+  "headerWhiteList": [
+    "apiKey"
+  ],
+  "welcomeFile": "/webapp/index.html",
+  "sendWelcomeFileRedirect": true
+}

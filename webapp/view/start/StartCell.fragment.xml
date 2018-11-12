@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f">
+	<layout:BlockLayoutCell class="sapUiContentPadding" width="4">
+		<layout:VerticalLayout width="100%">
+			<core:Icon src="{start>icon}" size="4rem" color="Default"></core:Icon>
+			<Title level="H1" titleStyle="H1" text="{start>name}" tooltip="{start>name}" class="sapUiTinyMarginTop"/>
+			<Text text="{start>namespace}" class="sapUiTinyMarginBottom"/>
+			<Text text="{start>description}" class="sapUiTinyMarginBottom"/>
+		</layout:VerticalLayout>
+	</layout:BlockLayoutCell>
+	<layout:BlockLayoutCell class="sapUiContentPadding" width="4">
+		<layout:VerticalLayout width="100%">
+			<layout:HorizontalLayout>
+				<f:Avatar src="{start>avatar}" visible="{= !!${start>avatar}}" displaySize="M"></f:Avatar>
+				<core:Icon src="{start>icon}" visible="{= !!${start>icon}}" size="2rem" color="Default"></core:Icon>
+				<layout:VerticalLayout >
+					<Title level="H1" titleStyle="H1" text="{start>name}" tooltip="{start>name}" class="sapUiTinyMarginTop"/>
+					<Link href="{start>profile}" visible="{= !!${start>createby}}" text="Create by {start>createby}" class="sapUiSmallMarginBottom" emphasized="true"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+			<Text text="{start>description}" class="sapUiTinyMarginBottom"/>
+			<Link href="{start>source}" text="{start>source}" class="sapUiSmallMarginBottom" emphasized="true"/>
+			<Label text="Further Information" design="Bold"/>
+			<layout:VerticalLayout class="sapUiTinyMarginBottom">
+				<!--	<Link-->
+				<!--		href="{homeView>source}"-->
+				<!--		visible="{= ${homeView>source} === undefined ? false : true }"-->
+				<!--		target="_blank"-->
+				<!--		text="{i18n>homeSourceCode}"/>-->
+				<Link href="{start>documentation}" target="_blank" text="Documentation"/>
+				<!--	<Link-->
+				<!--		href="{homeView>demo}"-->
+				<!--		visible="{= ${homeView>demo} === undefined ? false : true }"-->
+				<!--		target="_blank"-->
+				<!--		text="{i18n>homeDemo}"/>-->
+			</layout:VerticalLayout>
+			<Label text="Namespace: {start>namespace}" class="sapUiTinyMarginEnd"/>
+			<Label text="License: {start>license}" class="sapUiTinyMarginEnd"/>
+		</layout:VerticalLayout>
+	</layout:BlockLayoutCell>
+</core:FragmentDefinition>

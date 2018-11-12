@@ -1,0 +1,11 @@
+.headerBackground {
+    color: #ffffff;
+    background-image: url("../img/bigbang.jpg");
+    background-size: 100% auto;
+    background-position: 0 80%;
+}
+
+.headerBackground .sapUiBlockCellContent,
+.headerBackground .sapUiBlockCellContent .sapMText{
+    color: #ffffff;
+}

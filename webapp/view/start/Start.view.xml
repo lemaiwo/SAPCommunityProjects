@@ -1,0 +1,48 @@
+<mvc:View controllerName="be.wl.open.sap.central.controller.start.Start" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Page id="start" showHeader="false">
+		<content>
+			<l:VerticalLayout id="containerLayout" width="100%">
+				<l:BlockLayout id="header" background="Light">
+					<l:BlockLayoutRow>
+						<!--<l:BlockLayoutCell class="headerBackground" titleAlignment="Center" title="SAP OpenSource Central">-->
+						<l:BlockLayoutCell class="headerBackground" titleAlignment="Center" title="SAP Community Projects">
+							<l:VerticalLayout width="100%"  class="sapUiLargeMargin">
+								<l:Grid containerQuery="true" position="Center" width="800px">
+									<Toolbar width="800px">
+										<Select forceSelection="false" selectedKey="ALL" class="">
+											<core:Item key="ALL" text="All"/>
+											<core:Item key="ABAP" text="ABAP"/>
+											<core:Item key="UI5" text="UI5"/>
+											<core:Item key="SAPWEBIDE" text="SAP Web IDE"/>
+										</Select>
+										<SearchField width="100%" class="" search="onSearch"/>
+									</Toolbar>
+								</l:Grid>
+							</l:VerticalLayout>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+				<l:BlockLayout id="grid" background="Light" content="{start>/groups}">
+					<!--<l:BlockLayoutRow >-->
+					<!--	<l:BlockLayoutCell class="sapUiContentPadding">-->
+					<!--		<l:VerticalLayout width="100%">-->
+					<!--			<core:Icon src="sap-icon://info" size="4rem" color="Default"></core:Icon>-->
+					<!--			<Title level="H1" titleStyle="H1" text="Info" tooltip="Info" class="sapUiTinyMarginTop"/>-->
+					<!--		</l:VerticalLayout>-->
+					<!--	</l:BlockLayoutCell>-->
+					<!--	<l:BlockLayoutCell class="sapUiContentPadding" >-->
+					<!--		<l:VerticalLayout width="100%">-->
+					<!--			<core:Icon src="sap-icon://info" size="4rem" color="Default"></core:Icon>-->
+					<!--			<Title level="H1" titleStyle="H1" text="Facebook" tooltip="Facebook" class="sapUiTinyMarginTop"/>-->
+					<!--		</l:VerticalLayout>-->
+					<!--	</l:BlockLayoutCell>-->
+					<!--</l:BlockLayoutRow>-->
+					<l:BlockLayoutRow content="{start>projects}">
+						<core:Fragment fragmentName="be.wl.open.sap.central.view.start.StartCell" type="XML"/>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</mvc:View>
