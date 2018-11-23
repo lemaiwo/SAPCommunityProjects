@@ -2,10 +2,11 @@ sap.ui.define([
 	"sap/ui/base/ManagedObject",
 	"../service/UI5LabService",
 	"../service/ABAPGitService",
+	"../service/ProjectService",
 	"sap/ui/model/base/ManagedObjectModel",
 	"../model/Project",
 	"../model/Group"
-], function (ManagedObect, UI5LabService, ABAPGitService, ManagedObjectModel, Project, Group) {
+], function (ManagedObect, UI5LabService, ABAPGitService,ProjectService, ManagedObjectModel, Project, Group) {
 	"use strict";
 	return ManagedObect.extend('be.wl.open.sap.central.state.Centraltate', {
 		metadata: {
@@ -25,10 +26,14 @@ sap.ui.define([
 		init: function () {
 			this.UI5LabService = new UI5LabService();
 			this.ABAPGitService = new ABAPGitService();
+			this.ProjectService = new ProjectService();
 			this.getAllLibraries();
 		},
 		getAllLibraries: function () {
 			Promise.all([this.ABAPGitService.getLibraries(), this.UI5LabService.getLibraries()]).then(this.addLibraries.bind(this));
+			this.ProjectService.getAllProjects().then(function(result){
+				console.log(result)	;
+			});
 		},
 		addLibraries: function (aLibs) {
 			this.allProjects = [];
